@@ -126,6 +126,14 @@ function AddProduct() {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div>
+        <button
+          className="btn btn-accent btn-sm"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Back
+        </button>
         <h2 className="text-center text-4xl mb-5">Add Product</h2>
         <form
           onSubmit={submitHandler}

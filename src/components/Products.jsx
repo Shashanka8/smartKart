@@ -7,10 +7,8 @@ function Products() {
   const navigate = useNavigate();
   const productCtx = useContext(ProductContext);
 
-  console.log(productCtx.products);
-
   return (
-    <>
+    <div className="mt-16">
       <div className="flex justify-between mb-10">
         <span className="text-4xl">Products</span>
         <span>
@@ -24,12 +22,21 @@ function Products() {
           </button>
         </span>
       </div>
+      <div
+        className={`${
+          productCtx.products.length === 0 ? "flex" : "hidden"
+        } justify-center items-center`}
+      >
+        {productCtx.products.length === 0 && (
+          <progress className="progress w-56"></progress>
+        )}
+      </div>
       <div className="flex justify-between items-start flex-wrap">
         {productCtx.products?.map((item) => (
           <ProductItem key={item.id} {...item} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

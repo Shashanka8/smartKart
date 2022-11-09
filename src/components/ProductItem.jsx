@@ -2,8 +2,15 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function ProductItem(props) {
-  const { title, thumbnail, description, price, rating, discountPercentage } =
-    props;
+  const {
+    title,
+    thumbnail,
+    description,
+    price,
+    rating,
+    discountPercentage,
+    stock,
+  } = props;
 
   const navigate = useNavigate();
 
@@ -33,6 +40,7 @@ function ProductItem(props) {
           src={thumbnail}
           alt={description}
           className="bg-cover min-h-[240px]"
+          loading="lazy"
         />
       </figure>
       <div className="card-body">
@@ -46,6 +54,7 @@ function ProductItem(props) {
               className="mask mask-star bg-green-500"
             />
           </span>
+          <span className="ml-5 text-base text-warning">{stock} left</span>
         </h2>
         <p>{description}</p>
         <p className="text-xl font-semibold">
