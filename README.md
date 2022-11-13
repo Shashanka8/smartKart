@@ -1,3 +1,5 @@
+E-commerce project for self learning
+
 API used - https://dummyjson.com/docs/products
 
 Design and create UI to perform below steps
